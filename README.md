@@ -1,3 +1,14 @@
-There are twenty countries. Your goal is to guess their capitals. You have only five attempts. 
-There are two types of failures. The first is you didn't guess or typed it wrong. But you are allowed to input a first letter with lowercase. You also can input a string without space if it consists of two words. 
-The second failure is you skipped a country or pressed "New country" before "Check" even if you was right.
+## Guess the capital
+
+There are all world countries. Your goal is to type the correct name of the capital. 
+
+You have only ten attempts.
+You are allowed to input a letters with lowercase. You also can input a string without space or dash if city name consists of two or more words. 
+If you typed wrong city name and clicked "Check" (or Enter) button, a mistake is counted. 
+
+You can skip and set another country by click of "New country" (or Space) button.
+In case all countries are considered the app terminates.
+
+You may exit from the app by click of "Quit" button.
+
+
