@@ -79,12 +79,12 @@ class MainWindow(QMainWindow):
         self.capitalEdit = QLineEdit(self)
 
         self.checkBtn = QPushButton('Check', self)
-        self.NewCountryBtn = QPushButton('New Country', self)
+        self.newCountryBtn = QPushButton('New Country', self)
         self.quitBtn = QPushButton('Quit', self)
 
     def initSignals(self):
         self.checkBtn.clicked.connect(self.onClickCheck)
-        self.NewCountryBtn.clicked.connect(self.onClickNewCountry)
+        self.newCountryBtn.clicked.connect(self.onClickNewCountry)
         self.quitBtn.clicked.connect(self.onClickQuit)
 
         self.capitalEdit.textChanged.connect(self.initBlock)
@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
         self.mainLayout.addWidget(self.capitalEdit)
         self.mainLayout.addWidget(self.resultLabel, Qt.AlignVCenter)
         self.mainLayout.addWidget(self.checkBtn)
-        self.mainLayout.addWidget(self.NewCountryBtn)
+        self.mainLayout.addWidget(self.newCountryBtn)
         self.mainLayout.addWidget(self.quitBtn)
 
         self.setCentralWidget(self.w)
