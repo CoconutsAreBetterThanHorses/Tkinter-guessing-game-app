@@ -141,7 +141,6 @@ class MainWindow(QMainWindow):
             self.resultLabel.setText(f"You didn't guess! "
                                      f"The attempt №{self.mistakes + 1}")
 
-
     def onClickNewCountry(self):
         # Quit from the app if all countries have been before
         if len(self.countries.CACHE) == len(self.countries.CBC):
