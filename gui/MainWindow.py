@@ -3,9 +3,8 @@ from random import choice, shuffle
 import requests
 from PyQt5.QtCore import QObject, Qt
 from PyQt5.QtWidgets import (
-    QMainWindow, QWidget,
-    QLabel, QLineEdit, QPushButton,
-    QVBoxLayout
+    QMainWindow, QWidget, QLabel,
+    QPushButton, QVBoxLayout
 )
 
 
@@ -64,6 +63,8 @@ class MainWindow(QMainWindow):
         self.countryLabel = QLabel(self)
         self.countryLabel.setStyleSheet("font: 18pt;")
         self.countryLabel.setAlignment(Qt.AlignCenter)
+        self.pointsLabel = QLabel(self)
+        self.pointsLabel.setAlignment(Qt.AlignCenter)
         self.resultLabel = QLabel(self)
         self.resultLabel.setAlignment(Qt.AlignCenter)
 
@@ -77,6 +78,7 @@ class MainWindow(QMainWindow):
 
     def initSingltoneData(self):
         self.countries = Countries()
+        self.points = 0
         self.mistakes = 0
 
     def initNewCountryData(self):
@@ -114,6 +116,7 @@ class MainWindow(QMainWindow):
 
         self.mainLayout = QVBoxLayout(self.w)
         self.mainLayout.addWidget(self.countryLabel, Qt.AlignVCenter)
+        self.mainLayout.addWidget(self.pointsLabel, Qt.AlignVCenter)
         self.mainLayout.addWidget(self.resultLabel, Qt.AlignVCenter)
         self.mainLayout.addWidget(self.firstCapitalBtn)
         self.mainLayout.addWidget(self.secondCapitalBtn)
@@ -131,6 +134,9 @@ class MainWindow(QMainWindow):
 
         if answer == city:  # mismatching handler
             self.resultLabel.setText("That's right!")
+            # Update points counter
+            self.points += 1
+            self.pointsLabel.setText(f'Points: {self.points}')
             # Unlock the button if answer is right
             self.newCountryBtn.setEnabled(True)
         else:
